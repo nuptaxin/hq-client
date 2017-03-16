@@ -1,0 +1,10 @@
+E:\Kingsoftcloud\vs2010\Projects\HqClient\HqClient\bin\Debug\HqClient.exe
+E:\Kingsoftcloud\vs2010\Projects\HqClient\HqClient\bin\Debug\HqClient.pdb
+E:\Kingsoftcloud\vs2010\Projects\HqClient\HqClient\obj\x86\Debug\HqClient.Form1.resources
+E:\Kingsoftcloud\vs2010\Projects\HqClient\HqClient\obj\x86\Debug\HqClient.Login.resources
+E:\Kingsoftcloud\vs2010\Projects\HqClient\HqClient\obj\x86\Debug\HqClient.Properties.Resources.resources
+E:\Kingsoftcloud\vs2010\Projects\HqClient\HqClient\obj\x86\Debug\HqClient.csproj.GenerateResource.Cache
+E:\Kingsoftcloud\vs2010\Projects\HqClient\HqClient\obj\x86\Debug\HqClient.exe
+E:\Kingsoftcloud\vs2010\Projects\HqClient\HqClient\obj\x86\Debug\HqClient.pdb
+E:\Kingsoftcloud\vs2010\Projects\HqClient\HqClient\bin\Debug\MySql.Data.dll
+E:\Kingsoftcloud\vs2010\Projects\HqClient\HqClient\obj\x86\Debug\HqClient.csprojResolveAssemblyReference.cache
