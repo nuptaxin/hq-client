@@ -75,8 +75,8 @@
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "登陆";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -100,6 +100,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Login";
             this.Text = "用户登录";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

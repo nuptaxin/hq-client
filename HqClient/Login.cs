@@ -43,15 +43,19 @@ namespace HqClient
             {
                 System.Windows.Forms.MessageBox.Show("打开数据库异常：" + ee.Message);
             }
-        }  
+        }
 
 
-
+       
         private void button1_Click(object sender, EventArgs e)
         {
             MySqlCommand cmd = null;
             MySqlDataReader reader = null;
             String name = null;
+            int status = 0;
+            Boolean hasResult = false;
+            int id = -1;
+
             try
             {
                 if (conn == null || conn.State == ConnectionState.Closed)
@@ -64,9 +68,12 @@ namespace HqClient
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
+                    hasResult = true;
                     if (reader.Read())
                     {
                         name = reader.GetString("name");
+                        status = reader.GetInt32("status");
+                        id = reader.GetInt32("id");
                     }
                 }
             }
@@ -87,13 +94,32 @@ namespace HqClient
                     conn.Close();
                     conn.Dispose();
                 }
-            }  
-            if (name!=null) {
-                MessageBox.Show("当前登陆用户为测试用户","提示");
+            }
+            if (hasResult&&name != null&&status ==2)
+            {
+                MessageBox.Show("用户："+name+" 登陆成功", "登陆成功跳转提示");
                 this.Hide();
-                Form1 form1 = new Form1(name);
+                Form1 form1 = new Form1(name,id);
                 form1.Show();
             }
+            else {
+                if (!hasResult) {
+                    MessageBox.Show("用户名或密码错误，请核对后重新输入", "登陆失败提示");
+                    textBox2.Text = null;
+                }else if (status < 2) {
+                    MessageBox.Show("当前用户未开通登陆功能，请5分钟后再试", "登陆失败提示");
+                }
+                else if (status == 3)
+                {
+                    MessageBox.Show("当前用户注册失败，请联系管理员:nuptaxin@gmail.com", "登陆失败提示");
+                }
+            }
+        }
+
+        private void Login_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+
         }
     }
 }
